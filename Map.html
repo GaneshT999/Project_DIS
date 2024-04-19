@@ -2,12 +2,19 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         #map {
             width: 100%;
-            height: 400px;
+            height: 480px;
+        }
+
+        .form-field {
+            width: 100%;
         }
     </style>
 </head>
@@ -15,7 +22,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html" style="color: green; font-size: 36px; font-weight: bold; text-decoration: none;">Vethukko</a>
+            <a class="navbar-brand" href="#" style="color: green; font-size: 36px; font-weight: bold; text-decoration: none;">Vethukko</a>
             <!-- END: ed8c6549bwf9 -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,15 +45,13 @@
             </div>
         </div>
     </nav>
-        <div id="map"></div>
+    <div id="map"></div>
 
     <!-- Leaflet library -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-
-    <!-- Leaflet map script -->
     <script>
         var map = L.map('map').setView([28.063640421897833, -82.43445996246433], 14); // setView([latitude, longitude], zoom level)
 
@@ -79,9 +84,20 @@
         L.marker([28.090198233111607, -82.42873677167978]).addTo(map)
             .bindPopup("<b>Forest Lake</b><br>Tampa, FL").bindTooltip("Forest Lake").openTooltip();
 
-        L.marker([28.05940678121756, -82.4138328750464]).addTo(map)
-            .bindPopup("<b>USF</b><br>Tampa, FL").bindTooltip("USF").openTooltip();
+        // Custom red marker icon for USF
+        var redIcon = new L.Icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        L.marker([28.05940678121756, -82.4138328750464], { icon: redIcon }).addTo(map)
+            .bindPopup("<b>University of South Florida</b><br>Tampa, FL").bindTooltip("USF").openTooltip();
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
