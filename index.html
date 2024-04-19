@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation Finder for Students</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS to set fixed width for form elements */
+        .form-field {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: green; font-size: 36px; font-weight: bold; text-decoration: none;">Vethukko</a>
+            <!-- END: ed8c6549bwf9 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="active nav-link" href="index.html"> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Compare.html">Compare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Map.html">Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white py-5">
+        <div class="container">
+            <h1 class="display-4" style="color: green; font-size: 48px; font-weight: bold; text-align: center;">Bulls!! off campus housing.</h1>
+            <p class="lead" style="color: green; font-size: 24px; font-weight: bold; text-align: center;">Find the right apartment for you.</p>
+
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <select class="form-select form-field">
+                        <option selected>Select Place</option>
+                        <!-- Replace 'Place1', 'Place2', etc. with your actual places -->
+                        <option value="Place1">Place1</option>
+                        <option value="Place2">Place2</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select form-field">
+                        <option selected>Select Bull Runner Distance</option>
+                        <option value="1">1 min walk</option>
+                        <option value="3">3 min walk</option>
+                        <option value="5">5 min walk</option>
+                        <option value="10">10 min walk</option>
+                        <option value="15">15 min walk</option>
+                        <option value="20">20 min walk</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <input type="number" class="form-control form-field" placeholder="Beds">
+                </div>
+                <div class="col-md-2">
+                    <input type="number" class="form-control form-field" placeholder="Bath">
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select form-field">
+                        <option selected>Select Price Range</option>
+                        <option value="200-300">$200 - $300</option>
+                        <option value="300-350">$300 - $350</option>
+                        <option value="350-400">$350 - $400</option>
+                        <option value="400-500">$400 - $500</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-auto">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Top Apartment Deals around USF campus</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Repeat this card for each apartment -->
+            <div class="col">
+                <div class="card">
+                    <img src="images/lakeview.jpg" class="card-img-top" alt="Apartment Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Cambrdige Woods</h5>
+                        <p class="card-text">Tharuvtha pedadhham</p>
+                        <a href="#" class="btn btn-warning">$50</a>
+                        <!-- Other buttons or links -->
+                    </div>
+                </div>
+            </div>
+            <!-- End of card -->
+            <div class="col">
+                <div class="card">
+                    <img src="images/viridian.jpg" class="card-img-top" alt="Apartment Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Viridian</h5>
+                        <p class="card-text">Apartments -1 bed</p>
+                        <a href="#" class="btn btn-warning">$100</a>
+                        <!-- Other buttons or links -->
+                    </div>
+                </div>
+            </div>
+            <!--- End of card-->
+            <div class="col">
+                <div class="card">
+                    <img src="images/lakeview.jpg" class="card-img-top" alt="Apartment Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Lakeview</h5>
+                        <p class="card-text">Single Sharing</p>
+                        <a href="#" class="btn btn-warning">$50</a>
+                        <!-- Other buttons or links -->
+                    </div>
+                </div>
+            </div>
+            <!--- End of card-->
+        </div>
+    </section>
+
+    <footer class="bg-light py-3">
+        <div class="container text-center">
+            <p class="mb-0">© 2024 ApartmentFinder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
