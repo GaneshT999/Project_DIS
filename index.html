@@ -56,15 +56,22 @@
                         <a class="nav-link" href="about.html">About US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
-                </ul>
+                        <a class="nav-link" href="login.html" id="loginLink">Login</a>
+
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#" onclick="logout()" id="logoutButton">Logout</a>
+
+                    </li>
+
+                    </ul>
             </div>
         </div>
     </nav>
 
     <header class="bg-white py-5">
         <div class="container">
-            <h1 class="display-4" style="color: green; font-size: 48px; font-weight: bold; text-align: center;">Bulls!!! off campus housing.</h1>
+            <h1 class="display-4" style="color: green; font-size: 48px; font-weight: bold; text-align: center;">Bulls!! off campus housing.</h1>
             <p class="lead" style="color: green; font-size: 24px; font-weight: bold; text-align: center;">Find the right apartment for you.</p>
 
             <div class="row justify-content-center">
@@ -317,6 +324,34 @@
         </div>
     </footer>
 
+    <script>
+        window.onload = function() {
+            // Get the username from localStorage
+            var username = localStorage.getItem('username');
+
+            // Get the logout button
+            var logoutButton = document.getElementById('logoutButton');
+
+            // If the user is logged in, show the logout button
+            if (username) {
+                var loginLink = document.getElementById('loginLink');
+                loginLink.textContent = username; // Change link text to username
+                loginLink.href = "#"; // Optionally change the href if you don't want it to link to the login page anymore
+                logoutButton.style.display = 'block'; // Show the logout button
+            } else {
+                logoutButton.style.display = 'none'; // Hide the logout button
+            }
+        };
+        function logout() {
+    localStorage.removeItem('username'); // Clear username from storage
+    window.location.href = 'index.html'; // Redirect to the login page
+}
+    
+
+        </script>
+        
+        
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

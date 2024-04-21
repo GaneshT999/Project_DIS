@@ -181,13 +181,13 @@
     </div>
     <form class="email-login" id="login-form">
       <div class="u-form-group">
-        <input type="email" placeholder="Email">
+        <input type="email" placeholder="Email" id="username">
       </div>
       <div class="u-form-group">
-        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Password" id="password">
       </div>
       <div class="u-form-group">
-        <button onclick="showSignInContent()">Log in</button>
+        <button type="submit">Log in</button>
       </div>
       <div class="u-form-group">
         <a href="#" class="forgot-password">Forgot password?</a>
@@ -216,21 +216,30 @@
   </div>
 
   <script>
-    function showSignUpContent() {
-      document.getElementById("login-form").style.display = "none";
-      document.getElementById("signup-form").style.display = "block";
-      document.getElementById("additional-fields").style.display = "block";
-    }
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
 
-    function showSignInContent() {
-      document.getElementById("login-form").style.display = "block";
-      document.getElementById("signup-form").style.display = "none";
-      document.getElementById("additional-fields").style.display = "none";
-    }
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "admin@gmail.com" && password === "password") {
+        localStorage.setItem('username', username);
+        alert("Login successful");
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid credentials");
+      }
+    });
+
     function showLogInContent() {
       document.getElementById("login-form").style.display = "block";
       document.getElementById("signup-form").style.display = "none";
-}    
+    }
+
+    function showSignUpContent() {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("signup-form").style.display = "block";
+    }
   </script>
 </body>
 </html>
