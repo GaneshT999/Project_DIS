@@ -288,7 +288,6 @@ const listings_new = [
                  <td>${listing.floorArea}</td>
                  <td>${listing.availableDate}</td>
                  <td>${listing.contact}</td>
-                 <td><img src="${listing.image}" style="width: 100px;" alt="Image of ${listing.title}"></td>
              `;
              tableBody.appendChild(row);
          });
